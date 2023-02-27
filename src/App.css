@@ -349,7 +349,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   text-align: center;
   width: 56%;
 }
-.project .nav.nav-pills {
+/* .project .nav.nav-pills {
   width: 72%;
   margin: 0 auto;
   border-radius: 50px;
@@ -401,7 +401,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .nav-link#projects-tabs-tab-third {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 0 55px 55px 0;
-}
+} */
+
+/* PRUEBA CHAT GPT */
 .proj-imgbx {
   position: relative;
   border-radius: 30px;
@@ -409,13 +411,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-bottom: 24px;
 }
 .proj-imgbx::before {
-  content: "";
+  content: attr(data-description);
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
   opacity: 0.85;
   position: absolute;
   width: 100%;
   height: 0;
   transition: 0.4s ease-in-out;
+  text-align: center;
+  z-index: 0;
 }
 .proj-imgbx:hover::before {
   height: 100%;
@@ -454,7 +458,37 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   right: 0;
   z-index: -4;
 }
+.proj-imgbx a.github-link,
+.proj-imgbx a.vercel-link {
+  display: block;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 10px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+  z-index: 1;
+}
 
+.proj-imgbx a.github-link {
+  background-image: url('../src/assets/imgs/GitHub.png');
+  background-size: cover;
+  background-position: center;
+  left: calc(50% - 30px); /* 30px = 50% width of one button */
+}
+
+.proj-imgbx a.vercel-link {
+  background-image: url('../src/assets/imgs/vercel.jpg');
+  background-size: cover;
+  background-position: center;
+  left: calc(50% + 30px); /* 30px = 50% width of one button */
+}
+
+.proj-imgbx:hover a.github-link,
+.proj-imgbx:hover a.vercel-link {
+  transform: translateX(-50%) translateY(-10px) scale(1.1);
+}
 /************ Projects Css ************/
 .contact {
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
